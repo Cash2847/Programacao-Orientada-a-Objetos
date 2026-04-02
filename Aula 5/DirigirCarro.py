@@ -58,7 +58,7 @@ class Carro:
     def frear(self, pessoa, chave, desaceleracao):
         if self.entrar_carro(pessoa, chave):
             self.velocidade = max(0, self.velocidade - desaceleracao)
-            print(f"Após frear, a velocidade atual do carro é de {self.velocidade}.")
+            print(f"Após frear, a velocidade atual do carro é de {self.velocidade} KM/H.")
 
 
     def passar_marcha(self, pessoa, chave):
@@ -75,6 +75,11 @@ class Carro:
 chave_do_carro = Chave("Volkswagen")
 pessoa = Pessoa("Zé da Manga", chave_do_carro)
 carro = Carro("Volkswagen", 2024)
+
+carro.ligar_carro(pessoa, chave_do_carro)
+carro.acelerar(pessoa, chave_do_carro, 100)
+carro.frear(pessoa, chave_do_carro, 70)
+
 
 carro.ligar_carro(pessoa, chave_do_carro)
 carro.acelerar(pessoa, chave_do_carro, 100)
