@@ -1,0 +1,36 @@
+@startuml
+title Diagramas de Classe - Agregacao e Composicao
+
+skinparam classAttributeIconSize 0
+
+package "Agregacao" {
+    class Banco {
+        - nome : str
+        - clientes : list
+        + adicionar_cliente(cliente)
+    }
+
+    class Cliente {
+        - nome : str
+    }
+
+    Banco o-- Cliente : agrega
+}
+
+package "Composicao" {
+    class Conta {
+        - numero : str
+        - titular : str
+        - historico : Historico
+        + depositar(valor)
+    }
+
+    class Historico {
+        - movimentos : list
+        + adicionar_movimento(descricao)
+    }
+
+    Conta *-- Historico : compoe
+}
+
+@enduml
